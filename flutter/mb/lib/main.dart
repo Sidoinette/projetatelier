@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:mb/pages/carroussel/carrousselPage.dart';
+import 'package:mb/pages/home/home.page.dart';
+import 'package:mb/pages/register/register.dart';
 
 void main() {
   runApp(const MainApp());
@@ -6,15 +9,24 @@ void main() {
 
 class MainApp extends StatelessWidget {
   const MainApp({super.key});
-
-  @override
+   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
+
+    return  MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.grey),
+        useMaterial3: true,
       ),
+      initialRoute: "/home",
+      routes: {  
+        "/home":(context)=> const HomePage(),
+        "/carrousel":(context)=> const CarrousselPage(),
+        "/register":(context)=> const RegisterPage(),
+
+      },
+      home: const HomePage() ,
     );
   }
 }
