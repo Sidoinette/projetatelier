@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:monfluter/core/components/custom_form_field.dart';
 import 'package:monfluter/pages/carroussel/carrousselPage.dart';
+import 'package:monfluter/pages/map/map.page.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -88,13 +89,14 @@ class LoginPage extends StatelessWidget {
                   width: 200,
                   child: ElevatedButton(
                     onPressed: () {
-                      // Logique à exécuter lorsque le bouton est appuyé
-                      print('Le bouton a été appuyé');
+                       Navigator.pop(context);
+                      Navigator.pushNamed(context, MapPage.routeName);
+                     
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.blue, // Couleur de fond du bouton
                     ),
-                    child: Text('Se Connecter'),
+                    child: const Text('Se Connecter'),
                   ),
                 ),
                 const Text(
