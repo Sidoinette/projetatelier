@@ -51,26 +51,6 @@ public class ClientRestControllerImpl implements ClientRestController {
         }
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
-/*
-    @GetMapping("/test")
-    public ResponseEntity<Map<String, String>> test() {
-        HashMap<String,String> map = new HashMap<>();
-        map.put("key","test ok");
-        return ResponseEntity.ok(map);
-    }
-
-    @PostMapping("/test")
-    public ResponseEntity<Map<String, String>> test(@RequestBody Map<String, String> mapReqiest) {
-        HashMap<String,String> map = new HashMap<>();
-        map.put("rep",mapReqiest.get("test1"));
-        return ResponseEntity.ok(map);
-    }
-
-    //http://localhost:4200/api
-
-
-
- */
 
 
 }

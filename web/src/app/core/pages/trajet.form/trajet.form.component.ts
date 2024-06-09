@@ -45,7 +45,7 @@ export class TrajetFormComponent {
    
     this.trajetService.create(this.Dto).subscribe(data => {
       if (data.statut == 201) {
-        this.router.navigateByUrl('/trajets');
+        this.router.navigateByUrl('/trajet');
       } else {
         this.errors = data.results;
       }

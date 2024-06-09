@@ -11,7 +11,7 @@ import { TrajetCreate, TrajetList } from "../../models/trajet.list";
   })
 
 export class TrajetServiceImpl  implements TrajetService{
-    private apiUrl=`${environment.APIURL}/trajet`
+    private apiUrl=`${environment.APIURL}/trajets`
     constructor(private http:HttpClient){
 
     }
