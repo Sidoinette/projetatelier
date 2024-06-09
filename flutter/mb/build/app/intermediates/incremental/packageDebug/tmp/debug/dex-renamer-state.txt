@@ -1,0 +1,4 @@
+#Sat Jun 08 18:03:52 GMT 2024
+base.0=C\:\\Users\\acer\\Documents\\GitHub\\projetatelier\\flutter\\mb\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+path.0=classes.dex
+renamed.0=classes.dex
