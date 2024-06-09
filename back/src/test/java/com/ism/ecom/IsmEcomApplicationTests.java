@@ -1,10 +1,10 @@
-package com.atelier.back;
+package com.ism.ecom;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class BackApplicationTests {
+class IsmEcomApplicationTests {
 
 	@Test
 	void contextLoads() {
