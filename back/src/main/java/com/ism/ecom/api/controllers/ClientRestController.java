@@ -1,5 +1,6 @@
 package com.ism.ecom.api.controllers;
 
+import com.ism.ecom.api.dto.request.ClientCreateRequestDto;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
@@ -16,7 +17,7 @@ public interface ClientRestController {
             @RequestParam( defaultValue = "") String keyword
     );
 
-    //@PostMapping("/etudiants")
-    //ResponseEntity<Map<Object, Object>> save(@Valid @RequestBody com.ism.ecom.web.dto.request.ClientCreateRequestDto etudiantRequestDto, BindingResult bindingResult);
+    @PostMapping("/clients")
+    ResponseEntity<Map<Object, Object>> saveClient(@Valid @RequestBody ClientCreateRequestDto client, BindingResult bindingResult);
 
 }

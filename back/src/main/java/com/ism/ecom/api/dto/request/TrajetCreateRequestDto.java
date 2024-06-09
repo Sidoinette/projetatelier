@@ -1,35 +1,50 @@
 package com.ism.ecom.api.dto.request;
 
 import com.ism.ecom.data.entities.Chauffeur;
+import com.ism.ecom.data.entities.Trajet;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.springframework.format.annotation.DateTimeFormat;
 
+import java.util.Date;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class TrajetCreateRequestDto {
-    private Long id;
     @NotBlank(message = "Le nom est obligatoire")
-    private String nomComplet;
+    private String depart;
+    @NotBlank(message = "Le nom est obligatoire")
+    private String arriver;
+    @NotBlank(message = "Le nom est obligatoire")
+    private Date date;
+    @NotBlank(message = "Le nom est obligatoire")
+    private int placeTotal;
+    @NotBlank(message = "Le nom est obligatoire")
+    private int placeDispo;
+    @NotBlank(message = "Le nom est obligatoire")
+    private double prix;
 
-    @NotBlank(message = "Le mail est obligatoire")
-    private String email;
-    @NotBlank(message = "Le Telephone est obligatoire")
-    @Pattern(regexp = "^[0-9]{9}", message = "Le  Telephone doit avoir au minimun 9 chiffres")
-    private String telephone;
-    @NotBlank(message = "Le username est obligatoire")
-    private String username;
-    @NotBlank(message = "Le password est obligatoire")
-    private String password;
 
     //Mapper
-    public Chauffeur toEntity(){
-        Chauffeur chauffeur = Chauffeur.builder()
-                .nomComplet(nomComplet)
-                .telephone(telephone)
-                .email(email)
-
+    public Trajet toEntity(){
+        Trajet trajet = Trajet.builder()
+                .depart(depart)
+                .arriver(arriver)
+                .date(date)
+                .placeDispo(placeDispo)
+                .placeTotal(placeTotal)
+                .prix(prix)
                 .build();
-        chauffeur.setPassword(password);
-        chauffeur.setUsername(username);
-        return chauffeur;
+
+        return trajet;
     }
 
 

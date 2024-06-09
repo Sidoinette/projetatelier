@@ -31,9 +31,10 @@ export class TrajetFormComponent {
   constructor(private fb: FormBuilder,private trajetService: TrajetServiceImpl,private router : Router){
     this.form = this.fb.group({
       depart:'',
-      arrivee:'',
+      arriver:'',
       date:'',
-      nbrePlace:0,
+      placeTotal:0,
+      placeDispo:0,
       prix:0
     })
   }

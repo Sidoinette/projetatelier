@@ -1,6 +1,8 @@
 package com.ism.ecom.api.controllers.impl;
 
 import com.ism.ecom.api.controllers.ClientRestController;
+import com.ism.ecom.api.dto.RestResponse;
+import com.ism.ecom.api.dto.request.ClientCreateRequestDto;
 import com.ism.ecom.api.dto.response.ClientResponseDto;
 import com.ism.ecom.data.entities.Client;
 import com.ism.ecom.services.ClientService;
@@ -12,10 +14,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.ArrayList;
@@ -36,6 +35,35 @@ public class ClientRestControllerImpl implements ClientRestController {
         Page<ClientResponseDto> dataDto = clients.map(ClientResponseDto::toDto);
         Map<Object, Object>  model= com.ism.ecom.api.dto.RestResponse.paginateResponse(dataDto.getContent(),new int[dataDto.getTotalPages()],dataDto.getNumber(),dataDto.getTotalElements(),dataDto.getTotalPages(), HttpStatus.OK);
         return new ResponseEntity<>(model, HttpStatus.OK);
+    }
+
+    @Override
+    public ResponseEntity<Map<Object, Object>> saveClient(ClientCreateRequestDto client, BindingResult bindingResult) {
+        Map<Object, Object> response;
+        if (bindingResult.hasErrors()){
+            Map<String, String> errors =new HashMap<>();
+            List<FieldError> fieldErrors = bindingResult.getFieldErrors();
+            fieldErrors.forEach(fieldError -> errors.put(fieldError.getField(),fieldError.getDefaultMessage()));
+            response= RestResponse.response(errors, HttpStatus.NOT_FOUND);
+        }else{
+            clientService.addClient(client);
+            response= RestResponse.response(client,HttpStatus.CREATED);
+        }
+        return new ResponseEntity<>(response, HttpStatus.OK);
+    }
+
+    @GetMapping("/test")
+    public ResponseEntity<Map<String, String>> test() {
+        HashMap<String,String> map = new HashMap<>();
+        map.put("key","test ok");
+        return ResponseEntity.ok(map);
+    }
+
+    @PostMapping("/test")
+    public ResponseEntity<Map<String, String>> test(@RequestBody Map<String, String> mapReqiest) {
+        HashMap<String,String> map = new HashMap<>();
+        map.put("rep",mapReqiest.get("test1"));
+        return ResponseEntity.ok(map);
     }
 
     //http://localhost:4200/api

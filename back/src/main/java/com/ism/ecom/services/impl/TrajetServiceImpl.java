@@ -25,7 +25,8 @@ public class TrajetServiceImpl implements TrajetService {
     }
 
     @Override
-    public void addTrajet(Trajet dto) {
-        trajetRepository.save(dto);
+    public void addTrajet(TrajetCreateRequestDto dto) {
+        Trajet trajet = dto.toEntity();
+        trajetRepository.save(trajet);
     }
 }
