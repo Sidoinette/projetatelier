@@ -23,26 +23,31 @@ class CommenconsPage extends StatelessWidget {
               },
               child: const Image(image: AssetImage('assets/logo.png')),
             ),
-            const Text(
-              "Activer votre geolocalisation",
-              style: TextStyle(
-                color: Color.fromARGB(255, 40, 177, 255),
-                fontWeight: FontWeight.bold,
-                fontFamily: 'Montserrat',
-                fontSize: 50,
-                decorationColor: Color.fromARGB(255, 40, 177, 255),
-                letterSpacing: 5,
+            const Center(
+              child: Text(
+                
+                "Activer votre geolocalisation",
+                style: TextStyle(
+                  color: Color.fromARGB(255, 40, 177, 255),
+                  fontWeight: FontWeight.bold,
+                  fontFamily: 'Montserrat',
+                  fontSize: 30,
+                  decorationColor: Color.fromARGB(255, 40, 177, 255),
+                  letterSpacing: 5,
+                ),
               ),
             ),
-            const Text(
-              "Activez votre geolocalisation pour \n trouver des voitures autour de vous.",
-              style: TextStyle(
-                color: Color.fromARGB(239, 34, 34, 34),
-                fontWeight: FontWeight.bold,
-                fontFamily: 'Montserrat',
-                fontSize: 10,
-                decorationColor: Color.fromARGB(255, 40, 177, 255),
-                letterSpacing: 5,
+            const Center(
+              child: Text(
+                "Activez votre geolocalisation pour \n trouver des voitures autour de vous.",
+                style: TextStyle(
+                  color: Color.fromARGB(239, 34, 34, 34),
+                  fontWeight: FontWeight.bold,
+                  fontFamily: 'Montserrat',
+                  fontSize: 10,
+                  decorationColor: Color.fromARGB(255, 40, 177, 255),
+                  letterSpacing: 5,
+                ),
               ),
             ),
              SizedBox(

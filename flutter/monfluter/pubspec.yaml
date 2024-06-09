@@ -12,7 +12,9 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_map: ^6.1.0
+  free_place_search: ^1.0.5
   url_launcher: ^6.3.0
+  get: 4.6.6
 
 dev_dependencies:
   flutter_test:

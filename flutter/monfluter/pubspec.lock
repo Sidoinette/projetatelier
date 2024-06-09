@@ -96,6 +96,22 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  free_place_search:
+    dependency: "direct main"
+    description:
+      name: free_place_search
+      sha256: "2047552cc6435e71488e447b4bfc41b3b2b05f55186545d41c39a12ec6e91cc8"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.5"
+  get:
+    dependency: "direct main"
+    description:
+      name: get
+      sha256: e4e7335ede17452b391ed3b2ede016545706c01a02292a6c97619705e7d2a85e
+      url: "https://pub.dev"
+    source: hosted
+    version: "4.6.6"
   http:
     dependency: transitive
     description:

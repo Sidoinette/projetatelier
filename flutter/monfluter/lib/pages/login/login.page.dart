@@ -14,7 +14,8 @@ class LoginPage extends StatelessWidget {
         body: Container(
           height: double.infinity,
           width: double.infinity,
-          child: Center(
+          child: SingleChildScrollView(
+               child: Center(
             child: Column(
               children: [
                 InkWell(
@@ -113,7 +114,9 @@ class LoginPage extends StatelessWidget {
               ],
             ),
           ),
-          //  child: SingleChildScrollView(
+          
+          )
+     
           //    child: Column(
           //     crossAxisAlignment: CrossAxisAlignment.center,
           //    mainAxisAlignment: MainAxisAlignment.center,
