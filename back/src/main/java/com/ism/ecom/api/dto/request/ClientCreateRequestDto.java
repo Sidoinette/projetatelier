@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 public class ClientCreateRequestDto {
-     private Long id;
+
      @NotBlank(message = "Le nom est obligatoire")
      private String nomComplet;
 

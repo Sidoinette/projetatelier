@@ -51,7 +51,7 @@ public class ClientRestControllerImpl implements ClientRestController {
         }
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
-
+/*
     @GetMapping("/test")
     public ResponseEntity<Map<String, String>> test() {
         HashMap<String,String> map = new HashMap<>();
@@ -69,6 +69,8 @@ public class ClientRestControllerImpl implements ClientRestController {
     //http://localhost:4200/api
 
 
+
+ */
 
 
 }

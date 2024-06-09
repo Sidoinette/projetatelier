@@ -36,8 +36,9 @@ public class TrajetRestControllerImpl implements TrajetRestController {
         Map<Object, Object>  model= RestResponse.paginateResponse(dataDto.getContent(),new int[dataDto.getTotalPages()],dataDto.getNumber(),dataDto.getTotalElements(),dataDto.getTotalPages(), HttpStatus.OK);
         return new ResponseEntity<>(model, HttpStatus.OK);
     }
-    
-    public ResponseEntity<Map<Object, Object>>  saveTrajet(TrajetCreateRequestDto trajet, BindingResult bindingResult) {
+
+    @Override
+    public ResponseEntity<Map<Object, Object>> saveTrajet(TrajetCreateRequestDto trajet, BindingResult bindingResult) {
         Map<Object, Object> response;
         if (bindingResult.hasErrors()){
             Map<String, String> errors =new HashMap<>();
@@ -45,10 +46,14 @@ public class TrajetRestControllerImpl implements TrajetRestController {
             fieldErrors.forEach(fieldError -> errors.put(fieldError.getField(),fieldError.getDefaultMessage()));
             response= RestResponse.response(errors, HttpStatus.NOT_FOUND);
         }else{
+            System.out.println("ok");
+            System.out.println(trajet);
             trajetService.addTrajet(trajet);
             response= RestResponse.response(trajet,HttpStatus.CREATED);
         }
         return new ResponseEntity<>(response, HttpStatus.OK);
+
+
     }
 
     //http://localhost:4200/api

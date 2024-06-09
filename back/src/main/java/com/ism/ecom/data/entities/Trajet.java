@@ -16,9 +16,9 @@ import java.util.List;
 @Table(name = "trajets")
 @Builder
 public class Trajet extends AbstractEntity{
-    @Column(nullable = false,length = 50)
+    @Column(nullable = true,length = 50)
     private String depart;
-    @Column(nullable = false,length = 50)
+    @Column(nullable = true,length = 50)
     private String arriver;
 
     @Temporal(TemporalType.DATE)
