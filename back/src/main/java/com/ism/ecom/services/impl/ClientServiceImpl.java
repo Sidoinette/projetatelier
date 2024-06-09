@@ -4,7 +4,7 @@ import com.ism.ecom.data.entities.Client;
 import com.ism.ecom.data.repositories.ClientRepository;
 import com.ism.ecom.exceptions.EntityNotFoundException;
 import com.ism.ecom.services.ClientService;
-import com.ism.ecom.web.dto.request.ClientCreateRequestDto;
+import com.ism.ecom.api.dto.request.ClientCreateRequestDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -32,11 +32,16 @@ public class ClientServiceImpl implements ClientService {
     @Override
     public Client getClientById(Long id) {
         return clientRepository.findById(id)
-                .orElseThrow(()->new EntityNotFoundException("article n'existe pas"));
+                .orElseThrow(()->new EntityNotFoundException("client n'existe pas"));
     }
 
     @Override
     public Client getClientByTelephone(String telephone) {
         return clientRepository.findClientByTelephoneAndActiveTrue(telephone);
+    }
+
+    @Override
+    public Page<Client> getAllClientWithPaginate(Pageable page) {
+        return clientRepository.findAllByActiveTrue(page);
     }
 }

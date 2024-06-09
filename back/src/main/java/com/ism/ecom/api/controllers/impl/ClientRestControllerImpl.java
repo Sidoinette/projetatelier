@@ -1,5 +1,9 @@
-package com.ism.ecom.web.controllers.impl;
+package com.ism.ecom.api.controllers.impl;
 
+import com.ism.ecom.api.controllers.ClientRestController;
+import com.ism.ecom.api.dto.response.ClientResponseDto;
+import com.ism.ecom.data.entities.Client;
+import com.ism.ecom.services.ClientService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
@@ -23,36 +27,18 @@ import java.util.Map;
 @RestController
 @RequiredArgsConstructor
 @CrossOrigin(value = "http://localhost:4200")
-public class ClientRestControllerImpl implements EtudiantRestController {
-    private final EtudiantsService etudiantsService;
-    private final EtudiantRequestService etudiantRequestService;
-    private final CoursService coursService;
-    private final ClasseService classeService;
+public class ClientRestControllerImpl implements ClientRestController {
+    private final ClientService clientService;
+
     @Override
     public ResponseEntity<Map<Object, Object>> listerEtudiants(int page, int size, String keyword) {
-        Page<Etudiant> etudiants=etudiantsService.findEdutiantByActiveTrue (PageRequest.of(page,size));
-        Page<EtudiantResponseDto> dataDto = etudiants.map(EtudiantResponseDto::toDto);
-        Map<Object, Object>  model= RestResponse.paginateResponse(dataDto.getContent(),new int[dataDto.getTotalPages()],dataDto.getNumber(),dataDto.getTotalElements(),dataDto.getTotalPages(), HttpStatus.OK);
+        Page<Client> clients=clientService.getAllClientWithPaginate (PageRequest.of(page,size));
+        Page<ClientResponseDto> dataDto = clients.map(ClientResponseDto::toDto);
+        Map<Object, Object>  model= com.ism.ecom.api.dto.RestResponse.paginateResponse(dataDto.getContent(),new int[dataDto.getTotalPages()],dataDto.getNumber(),dataDto.getTotalElements(),dataDto.getTotalPages(), HttpStatus.OK);
         return new ResponseEntity<>(model, HttpStatus.OK);
     }
 
-    @Override
-    public ResponseEntity<Map<Object, Object>> save(EtudiantRequestDto etudiantRequestDto, BindingResult bindingResult) {
-        /*Map<Object, Object> response;
-        if (bindingResult.hasErrors()){
-            Map<String, String> errors =new HashMap<>();
-            List<FieldError> fieldErrors = bindingResult.getFieldErrors();
-            fieldErrors.forEach(fieldError -> errors.put(fieldError.getField(),fieldError.getDefaultMessage()));
-            response= RestResponse.response(errors, HttpStatus.NOT_FOUND);
-        }else{
-            etudiantRequestService.add(etudiantRequestDto);
-            response= RestResponse.response(etudiantRequestDto,HttpStatus.CREATED);
-        }
-
-         */
-        //return new ResponseEntity<>(response, HttpStatus.OK);
-        return nullm
-    }
+    //http://localhost:4200/api
 
 
 

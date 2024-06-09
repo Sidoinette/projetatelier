@@ -1,4 +1,4 @@
-package com.ism.ecom.web.dto;
+package com.ism.ecom.api.dto;
 
 import org.springframework.http.HttpStatus;
 

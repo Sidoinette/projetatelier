@@ -17,6 +17,9 @@ import java.util.List;
 public class Vehicule extends AbstractEntity {
     @Column(nullable = false,length = 50)
     private String marque;
+
+    @Column(nullable = false,unique = true,length = 50)
+    private String plaque;
     @Column(nullable = false,length = 50)
     private String status;
     private Integer nbrPlaces;

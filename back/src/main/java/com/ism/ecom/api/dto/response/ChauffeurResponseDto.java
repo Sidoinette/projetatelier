@@ -1,8 +1,8 @@
 package com.ism.ecom.api.dto.response;
 
 
-import com.ism.ecom.data.entities.Client;
-import com.ism.ecom.data.entities.Course;
+import com.ism.ecom.data.entities.Chauffeur;
+import com.ism.ecom.data.entities.Vehicule;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -15,21 +15,23 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class ClientResponseDto {
+public class ChauffeurResponseDto {
     private Long id;
     private String nomComplet;
     private String email;
     private String telephone;
-    private List<Course> courses = new ArrayList<Course>();
+    private String vehicule;
 
 
-    public static ClientResponseDto toDto(Client client){
-        return ClientResponseDto
+
+    public static ChauffeurResponseDto toDto(Chauffeur chauffeur){
+        return ChauffeurResponseDto
                 .builder()
-                .id(client.getId())
-                .nomComplet(client.getNomComplet())
-                .telephone(client.getTelephone())
-                .email(client.getEmail())
+                .id(chauffeur.getId())
+                .nomComplet(chauffeur.getNomComplet())
+                .telephone(chauffeur.getTelephone())
+                .email(chauffeur.getEmail())
+                .vehicule(chauffeur.getVehicule().getPlaque())
                 .build();
     }
 }

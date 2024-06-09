@@ -1,18 +1,20 @@
 export interface TrajetList {
     id?:number
     depart:string
-    arrivee:string
+    arriver:string
     date: string
-    nbrePlace:number
+    placeTotal:number
+    placeDispo:number
     prix:number
 }
 
 export interface TrajetCreate{
     id?:number
     depart:string
-    arrivee:string
+    arriver:string
     date: string
-    nbrePlace:number
+    placeTotal:number
+    placeDispo:number
     prix:number
 }
 

@@ -37,7 +37,7 @@
                                           <div class="mb-4">
                                             <label for="arrivee" class="ml-2 text-base mb-4 bg-gray-100 pb-5 "><label for="arrivee" class="required">Arrivee</label></label>
                                             <input type="text" id="arrivee" name="arrivee" required="required" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
-                                              [(ngModel)]="Dto.arrivee"
+                                              [(ngModel)]="Dto.arriver"
                                               #libelle = "ngModel"
                                             />
                                             @if (libelle.errors && (libelle.dirty || libelle.touched)) {
@@ -54,7 +54,7 @@
                                           <div class="mb-4">
                                               <label for="nbrePlace" class="ml-2 text-base mb-4 bg-gray-100 pb-5 "><label for="nbrePlace" class="required">Nombres de places</label></label>
                                               <input type="number" id="nbrePlace" min="1" name="nbrePlace" required="required" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
-                                              [(ngModel)]="Dto.nbrePlace"
+                                              [(ngModel)]="Dto.placeDispo"
                                               #effectif = "ngModel"
                                               />
   

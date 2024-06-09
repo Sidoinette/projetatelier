@@ -1,4 +1,4 @@
-package com.ism.ecom.web.dto.response;
+package com.ism.ecom.api.dto.response;
 
 
 import com.ism.ecom.data.entities.Trajet;

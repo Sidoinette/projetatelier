@@ -32,6 +32,7 @@ public class VehiculeFixtures implements CommandLineRunner {
                 data.setNbrPlaces(3+i);
                 data.setChauffeur(chauffeur);
                 data.setActive(i % 2 == 0);
+                data.setPlaque("plaque"+i);
                 vehiculeRepository.save(data);
             }
         }

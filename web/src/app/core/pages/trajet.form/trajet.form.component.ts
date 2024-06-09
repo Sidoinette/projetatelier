@@ -18,9 +18,10 @@ export class TrajetFormComponent {
 
   Dto:TrajetList={
     "depart" : "",
-    "arrivee":"",
+    "arriver":"",
     "date": "",
-    "nbrePlace": 0,
+    "placeTotal": 0,
+    "placeDispo": 0,
     "prix" : 0
   }
 
