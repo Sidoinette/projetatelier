@@ -1,0 +1,54 @@
+<div x-data="{ open: false }" class="wrapper overflow-x-hidden bg-gray-100 ">
+    <app-header></app-header>
+    <div x-bind:aria-expanded="open"  class="flex flex-col me-0 md:ms-64 min-h-screen transition-all duration-500 ease-in-out">
+      <!-- Navbar -->
+      <app-barre></app-barre>
+      <main class="pt-20 -mt-2">
+        <div class="mx-auto py-2 sm:px-2">
+          <div class="w-full px-6 py-6 mx-auto">
+  
+            <!-- table -->
+            <div class="relative overflow-x-auto shadow-md sm:rounded-lg p-5">
+                <div class="p-6 pb-0 mb-0 border-b-0 border-b-solid rounded-t-2xl border-b-transparent">
+                    <div class="flex justify-end">
+                        <a routerLink="/trajet/form">
+                            <button type="submit" class="py-2 px-4 inline-block text-center mb-3 rounded leading-5 text-gray-100 bg-indigo-500 border border-indigo-500 bg-gradient-to-b from-indigo-400 to-indigo-600  hover:from-indigo-500 hover:to-indigo-600 focus:from-indigo-400 focus:to-indigo-600 hover:text-white hover:ring-0 hover:border-indigo-600 focus:bg-indigo-600 focus:border-indigo-600 focus:outline-none focus:ring-0">
+                                Nouveau Trajet
+                            </button>
+                        </a>
+  
+                    </div>
+                    <h4 class="bg-gray-100 text-xl pb-5 ">Liste des trajets</h4>
+                </div>
+                <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                    <thead class="text-center text-xs text-gray-700 uppercase bg-gray-500">
+                        <tr>
+                            <th class="px-4 py-3 text-xs"><i class="fa-solid fa-sort"></i></th>
+                            <th class="px-4 py-3 text-xs">Depart</th>
+                            <th class="px-4 py-3">Arrivee</th>
+                            <th class="px-4 py-3">Date</th>
+                            <th class="px-4 py-3">Nombre de place</th>
+                            <th class="px-4 py-3">Prix</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                      @for (item of response?.results; track $index) {
+                        <tr class="text-center border-solid border-b border-gray-800 dark:border-gray-700">
+                            <td class="px-2 py-2">{{item.id}}</td>
+                            <td class="px-2 py-2">{{item.depart}}</td>
+                            <td class="px-2 py-2">{{item.arrivee}}</td>
+                            <td class="px-2 py-2">{{item.date}}</td>
+                            <td class="px-2 py-2">{{item.nbrePlace}}</td>
+                            <td class="px-2 py-2">{{item.prix}} FCFA</td>
+                        </tr>
+                      }
+                    </tbody>
+                </table>
+                <app-danpagination [data]="dataPagination" (onGetNumberPage)="paginate($event)"></app-danpagination>
+            </div>
+  
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>

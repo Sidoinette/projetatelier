@@ -4,7 +4,7 @@ import com.ism.ecom.data.entities.Chauffeur;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 
-public class ChauffeurCreateRequestDto {
+public class TrajetCreateRequestDto {
     private Long id;
     @NotBlank(message = "Le nom est obligatoire")
     private String nomComplet;

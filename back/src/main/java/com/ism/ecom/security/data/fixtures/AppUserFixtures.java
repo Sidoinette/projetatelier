@@ -18,7 +18,7 @@ public class AppUserFixtures implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         securityService.saveUser("admin","passer");
-        securityService.addRoleToUser("admin","Admin");
-        securityService.addRoleToUser("admin","Client");
+        //securityService.addRoleToUser("admin","Admin");
+        // securityService.addRoleToUser("admin","Client");
     }
 }

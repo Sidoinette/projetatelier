@@ -6,7 +6,7 @@ import com.ism.ecom.security.services.SecurityService;
 import com.ism.ecom.security.services.impl.JwtService;
 import com.ism.ecom.security.controllers.dtos.AuthenticationRequestDto;
 
-import com.ism.ecom.web.dto.RestResponse;
+import com.ism.ecom.api.dto.RestResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
