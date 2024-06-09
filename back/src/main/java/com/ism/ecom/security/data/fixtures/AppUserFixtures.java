@@ -1,7 +1,5 @@
 package com.ism.ecom.security.data.fixtures;
 
-import com.ism.ecom.data.entities.Categorie;
-import com.ism.ecom.data.repositories.CategorieRepository;
 import com.ism.ecom.security.data.entities.AppUser;
 import com.ism.ecom.security.services.SecurityService;
 import lombok.RequiredArgsConstructor;
