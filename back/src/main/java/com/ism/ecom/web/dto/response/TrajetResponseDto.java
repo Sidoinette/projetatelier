@@ -37,7 +37,7 @@ public class TrajetResponseDto {
                 .depart(trajet.getDepart())
                 .arriver(trajet.getArriver())
                 .placeDispo(trajet.getPlaceDispo())
-
+                .placeTotal(trajet.getPlaceTotal())
                 .build();
     }
 }

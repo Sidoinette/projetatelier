@@ -24,16 +24,17 @@ import java.util.Map;
 @RequiredArgsConstructor
 @CrossOrigin(value = "http://localhost:4200")
 public class ClientRestControllerImpl implements EtudiantRestController {
-    private final EtudiantsService etudiantsService;
-    private final EtudiantRequestService etudiantRequestService;
-    private final CoursService coursService;
-    private final ClasseService classeService;
+
     @Override
     public ResponseEntity<Map<Object, Object>> listerEtudiants(int page, int size, String keyword) {
-        Page<Etudiant> etudiants=etudiantsService.findEdutiantByActiveTrue (PageRequest.of(page,size));
+
+        /*Page<Etudiant> etudiants=etudiantsService.findEdutiantByActiveTrue (PageRequest.of(page,size));
         Page<EtudiantResponseDto> dataDto = etudiants.map(EtudiantResponseDto::toDto);
         Map<Object, Object>  model= RestResponse.paginateResponse(dataDto.getContent(),new int[dataDto.getTotalPages()],dataDto.getNumber(),dataDto.getTotalElements(),dataDto.getTotalPages(), HttpStatus.OK);
+
         return new ResponseEntity<>(model, HttpStatus.OK);
+         */
+        return null;
     }
 
     @Override
@@ -51,7 +52,7 @@ public class ClientRestControllerImpl implements EtudiantRestController {
 
          */
         //return new ResponseEntity<>(response, HttpStatus.OK);
-        return nullm
+        return null;
     }
 
 
