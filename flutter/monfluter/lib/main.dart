@@ -3,6 +3,7 @@ import 'package:monfluter/pages/carroussel/carrousselPage.dart';
 import 'package:monfluter/pages/commencons/commenconPage.dart';
 import 'package:monfluter/pages/home/home.page.dart';
 import 'package:monfluter/pages/login/login.page.dart';
+import 'package:monfluter/pages/map/map.page.dart';
 import 'package:monfluter/pages/register/register.dart';
 
 void main() {
@@ -29,6 +30,7 @@ class MainApp extends StatelessWidget {
         "/register":(context)=> const RegisterPage(),
         "/start":(context)=> const CommenconsPage(),
         "/login":(context)=> const LoginPage(),
+        "/map":(context)=> const MapPage(), 
       },
       home: const HomePage() ,
     );
